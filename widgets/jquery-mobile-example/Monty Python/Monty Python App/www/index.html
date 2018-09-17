@@ -1,0 +1,557 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Monty Python Sample Course</title>
+<link href="jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.5.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+<!-- This reference to phonegap.js will allow for code hints as long as the current site has been configured as a mobile application. 
+	 To configure the site as a mobile application, go to Site -> Mobile Applications -> Configure Application Framework... -->
+<script src="phonegap.js" type="text/javascript"></script>
+</head> 
+<body> 
+<!-- Intro Page -->
+<div data-role="page" id="page">
+	<div data-role="header" data-backbtn="false">
+		<h1>Best of Monty Python</h1>
+	</div>
+	<div data-role="content"> 
+    <center><img src="images/mp/image1.png" width="300" height="223" alt="Monthy Python"></center>
+    	<h3>Welcome to this sample course</h3>
+        <p>In this short course we will learn all there is to know about Monty Python. In this course you will learn about all your favorite Monty Python moments</p>
+        <p>Press "Begin Course" to get started</p>
+        <div style="height:10px"></div>
+    <a href="#menu" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b">Begin Course</a>
+    </div>
+    
+</div>
+
+<!-- End Intro Page -->
+
+<!-- Start page2 -->
+<div data-role="page" id="menu">
+  <div data-role="header" data-backbtn="false">
+    <h1>Course Menu</h1>
+  </div>
+  <div data-role="content">
+  <center><img src="images/mp/image2.png" alt="Monty Group" width="280" height="201" hspace="5" border="0" align="middle"></center>
+  <h3>Course Menu Section</h3>
+  <p>In this course we will learn about the different Monty Python Skits. Below are some of the skits you will learn about. Tap one of the skits to get started. At any time you will be able to return to the menu or tap on the menu button to go to a different skit.</p>
+  <div style="height:10px"></div>
+ <ul data-role="listview">
+  <li data-role="list-divider">Misc Info</li> 
+  <li>
+      <h3><a href="#about">About Monty Python</a></h3>
+      <p>General Info</p>
+    </li>
+  <li data-role="list-divider">Holy Grail</li> 
+    <li>
+      <h3><a href="#kinghtsNi">Knights who say ni</a></h3>
+      <p>Holy Grail</p>
+    </li>
+    <li>
+      <h3><a href="#deadRabbit">Killer Bunny</a></h3>
+      <p>Holy Grail</p>
+    </li>
+    <li>
+      <h3><a href="#fleshWound">The Black Knight</a></h3>
+      <p>Holy Grail</p>
+    </li>
+    <li data-role="list-divider">Flying Circus</li>
+    <li>
+      <h3><a href="#spanishInq">Spanish Inquisistion</a></h3>
+      <p>Flying Circus</p>
+    </li>
+    <li>
+      <h3><a href="#instFunnyWalks">Institution of Funny Walks</a></h3>
+      <p>Flying Circus</p>
+    </li>
+    <li>
+      <h3><a href="#deadParrort">Dead Parrot</a></h3>
+      <p>Flying Circus</p>
+    </li>
+    <li>
+      <h3><a href="#lumberjack">The Lumberjack Song</a></h3>
+      <p>Flying Circus</p>
+    </li>
+    <li>
+      <h3><a href="#defenseFreshFruit">Self Defense Against Fresh Fruit</a></h3>
+      <p>Flying Circus</p>
+    </li>
+    <li>
+      <h3><a href="#bruces">The Bruces</a></h3>
+      <p>Flying Circus</p>
+    </li>
+    <li>
+      <h3><a href="#argumentClinic">Argument Clinic</a></h3>
+      <p>Flying Circus</p>
+    </li>
+    <li>
+      <h3><a href="#funniestJoke">The Funniest Joke in the World</a></h3>
+      <p>Flying Circus</p>
+    </li>
+    <li>
+      <h3><a href="#spam">Spam</a></h3>
+      <p>Flying Circus</p>
+    </li>
+    <li>
+      <h3><a href="#sillyOlympics">Silly Olympics</a></h3>
+      <p>Flying Circus</p>
+    </li>
+  </ul>
+  </div>
+</div>
+<!-- End page2 -->
+
+
+<!-- About Monty Python -->
+<div data-role="page" id="about">
+  <div data-role="header" data-backbtn="false">
+    <h1>About Monty Python</h1>
+  </div>
+  <div data-role="content">
+  <center>
+    <img src="images/mp/image3.jpg" width="280" height="182" alt="MP Group">
+  </center>
+  	<p>The irresistible Oxbridge partnership of John Cleese, Eric Idle, Graham Chapman, Michael Palin and Terry Jones, mixed with the dazzlingly surreal artworks of American Terry Gilliam, celebrates four decades and 45 episodes of risqué silliness.</p>
+    <p>The comedy of Monty Python was streaks ahead of its time. Famous for its innovation and radical splendor, Python sketches broke the mould of building to a specific punchline, delivering some of the funniest and most enduring sketches of our lifetime.</p>
+    <p>In this course we will review some of the best sketches ever done my Monty Pything. Return to the menu or tap the next button to go to the next page.</p>
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#menu" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+			<li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#kinghtsNi" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!-- End About Monty Python -->
+
+<!------------ Holy Grail Section -------------->
+
+<!-- Knights who say ni -->
+<div data-role="page" id="kinghtsNi">
+  <div data-role="header" data-backbtn="false">
+    <h1>Knights who say ni</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image4.jpg" width="280" height="188" alt="MP Group">
+  	</center>
+  	<p>Probably one of the most quoted from Monty Python and the Holy Grain are the Kinghts who say ni</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/Knights_Who_Say_Ni.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#about" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#deadRabbit" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!-- End Knights who say ni -->
+
+<!-- Killer Bunny -->
+<div data-role="page" id="deadRabbit">
+  <div data-role="header" data-backbtn="false">
+    <h1>Killer Bunny</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image5.png" width="280" height="207" alt="MP Group">
+  	</center>
+  	<p>Looks may be not what they seem to be. Watch out for sharp pointy teeth!</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/Killer_Bunny.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#kinghtsNi" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#fleshWound" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!-- End Killer Bunny -->
+
+<!-- The Black Knight -->
+<div data-role="page" id="fleshWound">
+  <div data-role="header" data-backbtn="false">
+    <h1>The Black Knight</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image6.png" width="280" height="185" alt="MP Group">
+  	</center>
+  	<p>In the spirit of never giving up! Tis only a flesh wound.</p>
+     <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/The_Black_Knight.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#deadRabbit" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#spanishInq" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!-- End the Black Knight -->
+
+<!--------------- End Holy Grail ----------->
+
+<!----------------Flying Circus Section -------------->
+
+<!--Spanish Inquisistion-->
+<div data-role="page" id="spanishInq">
+  <div data-role="header" data-backbtn="false">
+    <h1>Spanish Inquisistion</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image7.png" width="280" height="200" alt="MP Group">
+  	</center>
+  	<p>Given how memorable the great Python sketches are its amazing how few are successfully quotable. That’s because invariably the sketches were far too lyrically dense to be contracted to single catchphrases. One exception to the rule is, “Nobody Expects the Spanish Inquisition!” which is enough to get tears rolling about the plethora of weapons the Inquisition has at its disposal..</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/The_Spanish_Inquisition.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#fleshWound" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#instFunnyWalks" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--End Spanish Inquisistion-->
+
+<!--Institution of Funny Walks-->
+<div data-role="page" id="instFunnyWalks">
+  <div data-role="header" data-backbtn="false">
+    <h1>The Ministry of Silly Walks</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image8.png" width="280" height="201" alt="MP Group">
+  	</center>
+  	<p>The versatility of Python is amazing, as are John Cleese’s legs on the evidence of this sketch. Hardly the most intellectually demanding of skits, it’s a tribute to the brilliance of the show that it can flutter between scintillating word play and slapstick silliness. Great physical comedy.</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/Ministry_of_Silly_Walks.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#spanishInq" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#deadParrort" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--Institution of Funny Walks-->
+
+<!--Dead Parrot-->
+<div data-role="page" id="deadParrort">
+  <div data-role="header" data-backbtn="false">
+    <h1>Dead Parrot</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image9.png" width="280" height="208" alt="MP Group">
+  	</center>
+  	<p>Undeniably the most popular and well known of the Monty Python sketches, and for good reason too. The dead parrot – or “resting” Norwegian Blue, depending on which comedian you believe rightly – deserves its place at the peak of this list. Quintessentially Python, Cleese’s ranting complaints are deftly sidestepped by Palin’s slippery shopkeeper. Quite how this sketch only came second in the UK in Channel 4′s 50 Greatest Comedy Moments to Little Britain is anyone’s guess. Pure comedy gold doesn’t get better than this.</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/The_Parrot_Sketch.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#instFunnyWalks" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#lumberjack" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--Dead Parrot-->
+
+<!--The Lumberjack Song-->
+<div data-role="page" id="lumberjack">
+  <div data-role="header" data-backbtn="false">
+    <h1>The Lumberjack Song</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image10.png" width="280" height="197" alt="MP Group">
+  	</center>
+  	<p>The best Python song, barring perhaps Always Look On The Bright Side of Life, The Lumberjack Song is both eminently hum-able and achingly funny. Way before Eddie Izzard made cross-dressing cool as his executive transvestite, Python made it a topic of comedy.</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/Lumberjack_Song.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#deadParrort" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#defenseFreshFruit" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--The Lumberjack Song-->
+
+<!--Self Defense Against Fresh Fruit-->
+<div data-role="page" id="defenseFreshFruit">
+  <div data-role="header" data-backbtn="false">
+    <h1>Self Defense Against Fresh Fruit</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image11.png" width="280" height="209" alt="MP Group">
+  	</center>
+  	<p>Cleese delivers a knockout performance as the crazed Army instructor, helping his lackluster crew of misfits defend themselves from the dangers of passion fruit, bananas and other assorted fresh fruit.</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/Self_Defense_Against_Fruit.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#lumberjack" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#bruces" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--Self Defense Against Fresh Fruit-->
+
+<!--The Bruces-->
+<div data-role="page" id="bruces">
+  <div data-role="header" data-backbtn="false">
+    <h1>The Bruces</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image12.png" width="280" height="203" alt="MP Group">
+  	</center>
+  	<p>Howlingly un-PC yet still terribly funny. for all non-poofters.</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/Bruce.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#defenseFreshFruit" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#argumentClinic" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--The Bruces-->
+
+<!--Argument Clinic-->
+<div data-role="page" id="argumentClinic">
+  <div data-role="header" data-backbtn="false">
+    <h1>Argument Clinic</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image13.png" width="280" height="203" alt="MP Group">
+  	</center>
+  	<p>This is the best sketch Monty Python ever did. No it isn’t. Yes it is. No it isn’t.</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/Argument_Clinic.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#bruces" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#funniestJoke" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--Argument Clinic-->
+
+<!--The Funniest Joke in the World-->
+<div data-role="page" id="funniestJoke">
+  <div data-role="header" data-backbtn="false">
+    <h1>The Funniest Joke in the World</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image14.png" width="280" height="197" alt="MP Group">
+  	</center>
+  	<p>The ultimate weapon to win the war and destroy the Nazis. The atom bomb? Nope, humour.</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/World_ Funniest_Joke.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#argumentClinic" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#spam" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--The Funniest Joke in the World-->
+
+<!--Spam-->
+<div data-role="page" id="spam">
+  <div data-role="header" data-backbtn="false">
+    <h1>Spam</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image15.png" width="280" height="189" alt="MP Group">
+  	</center>
+  	<p>Hmm, lovely spam.</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/Spam.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#funniestJoke" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#sillyOlympics" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--Spam-->
+
+<!--Silly Olympics-->
+<div data-role="page" id="sillyOlympics">
+  <div data-role="header" data-backbtn="false">
+    <h1>Silly Olympics</h1>
+  </div>
+  <div data-role="content">
+  	<center>
+    	<img src="images/mp/image16.png" width="280" height="152" alt="MP Group">
+  	</center>
+  	<p>Hmm, lovely spam.</p>
+    <!-- Video -->
+    <center>
+	<video width="280" height="182" controls>
+  		<source src="http://rapidintake.com/customizations/vid/Silly_Olympics.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+    </center>
+    <!-- End Video -->
+    
+  </div>
+  <div id="footerArea" data-role="footer" data-theme="c" data-position="fixed">
+  	<div data-role="navbar">
+		<ul>
+			<li><a href="#spam" data-icon="arrow-l" data-rel="back">Previous Page</a></li>
+            <li><a href="#menu" data-icon="grid" data-transition="slideup" data-rel="dialog">Menu</a></li>
+            <li><a href="#menu" data-icon="arrow-r">Next Page</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  </div>
+</div>
+<!--Silly Olympics-->
+
+<!---------------- End Flying Circus Section --------------->
+
+</body>
+</html>

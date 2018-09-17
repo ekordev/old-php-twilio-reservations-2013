@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery Querystring - Darlesson Oliveira</title>
+
+<link type="text/css" rel="stylesheet" href="css/styles.css" />
+
+<script type="text/javascript" src="javascript/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="source/querystring-0.9.0.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	// Write some query strings for example
+	if( $.QueryString() == null ){
+		window.location.href = window.location.toString() + "?language=en&province=Alberta&province=Ontario&province=Quebec";
+	};
+	
+	// Get null for "country". This query string is not in the address bar	
+	$("#country").click(function(){
+								 	 
+		var message = $.QueryString("country"),
+			message = ( !message )? "null":message; // Passing the value null to string
+		
+		$("#msg_country").html( message ).slideFadeShow(); 
+		
+	});
+	
+	// Get "language" query string value from the address bar
+	$("#language").click(function(){
+								 		 
+		var message = $.QueryString("language"),
+			message = ( !message )? "null":message; // Passing the value null to string
+		
+		$("#msg_language").html( message ).slideFadeShow(); 
+		
+	});
+	
+	// Gets the length of query strings from the address bar
+	$("#length").click(function(){
+								 	 
+		var message = $.QueryString().size,
+			message = ( !message )? "null":message; // Passing the value null to string
+		
+		$("#msg_length").html( message ).slideFadeShow(); 
+		
+	});
+	
+	// Gets "language" query string as object
+	$("#languageAsObject").click(function(){
+								 	 
+		var message = $.QueryString().language,
+			message = ( !message )? "null":message; // Passing the value null to string
+		
+		$("#msg_languageAsObject").html( message ).slideFadeShow(); 
+		
+	});
+	
+	// Gets the length of "province" query strings from the address bar
+	$("#provinceLength").click(function(){
+								 	 
+		var message = $.QueryString("province"),
+			message = ( $.isArray( message ) )? message.length:"null"; // Passing the value null to string;
+		
+		$("#msg_provinceLength").html( message ).slideFadeShow(); 
+		
+	});
+	
+	// Gets "province" query string value from the address bar using a index
+	$("#provinceByIndex").click(function(){
+								 	 
+		var message = $.QueryString("province", { index : 2 }),
+			message = ( !message )? "null":message; // Passing the value null to string;
+		
+		$("#msg_provinceByIndex").html( message ).slideFadeShow(); 
+		
+	});
+	
+	// Gets "province" query string value from the address bar using a index and non-case sensitivity
+	$("#provinceNonCaseSensitivity").click(function(){
+								 	 
+		var message = $.QueryString("Province", {
+				index : 2,
+				isCaseSensitive : false
+			}),
+			message = ( !message )? "null":message; // Passing the value null to string;
+		
+		$("#msg_provinceNonCaseSensitivity").html( message ).slideFadeShow(); 
+		
+	});
+	
+	// Gets "country" query string value from a different url
+	$("#informingURL").click(function(){
+								 	 
+		var message = $.QueryString("country", {
+				href : "http://www.darlesson.com/?country=Brazil"
+			}),
+			message = ( !message )? "null":message; // Passing the value null to string;
+		
+		$("#msg_informingURL").html( message ).slideFadeShow(); 
+		
+	});
+	
+	$(".title > a").click(function(){
+		var $this = $(this),
+			$pre = $( $this.attr("href") );
+		$pre.slideFadeToggle();
+		return false;
+	});
+
+});
+
+// Effects
+$.fn.slideFadeToggle = function(speed, easing, callback) {
+	return this.animate({opacity: 'toggle', height: 'toggle'}, speed, easing, callback);
+};
+$.fn.slideFadeShow = function(easing, callback) {
+        return this.animate({ opacity: 'show', height: 'show' }, "fast", easing, callback);
+    };
+</script>
+
+</head>
+
+<body>
+
+	<em>jQuery QueryString v0.9.0 (Beta version). Copyright 2010, <a href="http://darlesson.com/" target="_blank">Darlesson Oliveira</a>. Dual licensed under the MIT and GPL licenses.</em>
+
+	<h1>jQuery QueryString</h1>
+    
+    <p>
+    	This code was created to make easier to get and to treat query strings. It may return the value of one query string, a collection
+        of query strings, the length, select query string by its index and turn off the case sensitivity.
+    </p>
+    
+    <div class="title" style="margin-top:20px;">
+    	<h2>Installing</h2>
+    </div>
+    
+    <p>
+    	Add the following files to your website
+    </p>
+    
+<pre class="code" style="display:block;"><code class="javascript">
+    // If you don't have the jQuery file already informed, insert the code bellow
+    &lt;script type="text/javascript" src="javascript/jquery-1.4.2.min.js">&lt;/script>
+    
+    // Insert the following code after the jQuery code in your website if you prefer the compact version or ...
+    &lt;script type="text/javascript" src="source/querystring-0.9.0-min.js">&lt;/script>
+    
+    // ... insert the following if you prefer the development version
+    &lt;script type="text/javascript" src="source/querystring-0.9.0.js">&lt;/script>
+    
+</code></pre>
+    
+    <div class="title" style="margin-top:20px;">
+    	<h2>Usage</h2>
+    </div>
+    
+    <p>
+    	If not informed, $.QueryString will get the browser's address bar URL. To inform a different one, check the <b>options</b> parameters.
+    </p>
+    
+<pre class="code" style="display:block;"><code class="javascript">
+    // Return null if there is no query string	
+    $.QueryString();
+    
+    // Return the length of query strings
+    $.QueryString().size;
+    
+    // Return null is the query string doesn't exist or the value of the
+    // query string if it exists
+    $.QueryString( //string );
+    
+    // Get the length of query strings with the same name
+    $.QueryString( //string ).length;
+    
+    // Return que value of a query string modifying the URL, the choosing
+    // its index and turning on or off the case sensitivity
+    $.QueryString( //string, { // options
+    	href : // URL string,
+		index : // number,
+		isCaseSensitive : boolean
+    });
+    
+    // Get the value of a query string as an object
+    $.QueryString().objectName;			
+    
+</code></pre>
+
+    <p>
+    	The <b>options</b> paremeters and its values are
+    </p>
+    
+	<dl>
+    	<dt>
+        	<tt>href</tt>
+        </dt>
+        <dd>
+        	<i>(string)(optional)</i> URL with or without query strings where the query string wanted will be searched.
+        </dd>
+        <dl>
+        	<dd>Default: window.location</dd>
+        </dl>
+    </dl>
+    
+	<dl>
+    	<dt>
+        	<tt>index</tt>
+        </dt>
+        <dd>
+        	<i>(number)(optional)</i> It returns the value of a query string in a collection of query strings with same name.
+        </dd>
+        <dl>
+        	<dd>Default: null</dd>
+        </dl>
+    </dl>
+    
+	<dl>
+    	<dt>
+        	<tt>isCaseSensitive</tt>
+        </dt>
+        <dd>
+        	<i>(boolean)(optional)</i> Decides if the query string searched will have the case sensitivity considered.
+        </dd>
+        <dl>
+        	<dd>Default: true</dd>
+        </dl>
+    </dl>
+
+    <div class="title" style="margin-top:20px;">
+    	<h2>Support</h2>
+    </div>
+
+    <p>
+    	This code is free of charge under the MIT and GPL licenses. But if you think it helped you saving your time,
+        please support me financially or adding my website link (http://darlesson.com/) in yours to keep sharing, creating and improving my codes.
+    </p>
+    
+    <p>
+    	To report bugs, send comments or suggestions please go to <a href="http://darlesson.com/contact/" target="_blank">my contact page</a>.
+    </p>
+
+	<a href="http://darlesson.com/donate/" target="_blank"><img src="images/btn_donate_LG.gif" alt="Support through donation" /></a>
+    
+    <h1>Examples</h1>
+    
+    <p>To start you will need query strings in your address bar for test. If they don't appear automatically, <a href="#" onclick="if( $.QueryString() == null ){ window.location.href = window.location.toString() + '?language=en&province=Alberta&province=Ontario&province=Quebec'; }; return false;">clique here</a>.</p>
+    
+    <!-- Item -->
+    <div class="title" style="margin-top:20px;">
+    	<h2>Inexisting Query String</h2>
+        <a href="#1"><img src="images/ico_plus.png" alt="Show the Code" /></a>
+    </div>
+    
+<pre id="1" class="code"><code class="javascript">
+    // Get null for "country". This query string is not in the address bar	
+    $("#country").click(function(){
+                                     
+        var message = $.QueryString("country"),
+            message = ( !message )? "null":message; // Passing the value null to string
+        
+        $("#msg_country").html( message ); 
+        
+    });
+    
+</code></pre>
+    
+    <input id="country" type="button" value="Return Country" />
+    <div id="msg_country" class="message"></div>
+    <!-- // Item -->
+    
+    <!-- Item -->
+    <div class="title">
+    	<h2>Getting a Query String Value</h2>
+        <a href="#2"><img src="images/ico_plus.png" alt="Show the Code" /></a>
+    </div>
+    
+<pre id="2" class="code"><code class="javascript">
+	// Get "language" query string value from the address bar
+	$("#language").click(function(){
+								 		 
+		var message = $.QueryString("language"),
+			message = ( !message )? "null":message; // Passing the value null to string
+		
+		$("#msg_language").html( message ); 
+		
+	});
+    
+</code></pre>
+    
+    <input id="language" type="button" value="Return Language" />
+    <div id="msg_language" class="message"></div>
+    <!-- // Item -->
+    
+    <!-- Item -->
+    <div class="title">
+    	<h2>Return Query String Length From the Address Bar</h2>
+        <a href="#3"><img src="images/ico_plus.png" alt="Show the Code" /></a>
+    </div>
+    
+<pre id="3" class="code"><code class="javascript">
+	// Gets the length of query strings from the address bar
+	$("#length").click(function(){
+								 	 
+		var message = $.QueryString().size,
+			message = ( !message )? "null":message; // Passing the value null to string
+		
+		$("#msg_length").html( message ); 
+		
+	});
+    
+</code></pre>
+    
+    <input id="length" type="button" value="Return Length" />
+    <div id="msg_length" class="message"></div>
+    <!-- // Item -->
+    
+    <!-- Item -->
+    <div class="title">
+    	<h2>Return Query String "language" as An Object</h2>
+        <a href="#4"><img src="images/ico_plus.png" alt="Show the Code" /></a>
+    </div>
+    
+<pre id="4" class="code"><code class="javascript">
+	// Gets "language" query string as object
+	$("#languageAsObject").click(function(){
+								 	 
+		var message = $.QueryString().language,
+			message = ( !message )? "null":message; // Passing the value null to string
+		
+		$("#msg_languageAsObject").html( message ); 
+		
+	});
+    
+</code></pre>
+    
+    <input id="languageAsObject" type="button" value="Return Query String as An Object" />
+    <div id="msg_languageAsObject" class="message"></div>
+    <!-- // Item -->
+    
+    <!-- Item -->
+    <div class="title">
+    	<h2>Return Query String Length of "province"</h2>
+        <a href="#5"><img src="images/ico_plus.png" alt="Show the Code" /></a>
+    </div>
+    
+<pre id="5" class="code"><code class="javascript">
+	// Gets the length of "province" query strings from the address bar
+	$("#provinceLength").click(function(){
+								 	 
+		var message = $.QueryString("province"),
+			message = ( $.isArray( message ) )? message.length:"null"; // Passing the value null to string;
+		
+		$("#msg_provinceLength").html( message ); 
+		
+	});
+    
+</code></pre>
+    
+    <input id="provinceLength" type="button" value="Return Province Length" />
+    <div id="msg_provinceLength" class="message"></div>
+    <!-- // Item -->
+    
+    <!-- Item -->
+    <div class="title">
+    	<h2>Return Query String "province" Using Its Index</h2>
+        <a href="#6"><img src="images/ico_plus.png" alt="Show the Code" /></a>
+    </div>
+    
+<pre id="6" class="code"><code class="javascript">
+	// Gets "province" query string value from the address bar using a index
+	$("#provinceByIndex").click(function(){
+								 	 
+		var message = $.QueryString("province", { index : 2 }),
+			message = ( !message )? "null":message; // Passing the value null to string;
+		
+		$("#msg_provinceByIndex").html( message ); 
+		
+	});
+    
+</code></pre>
+    
+    <input id="provinceByIndex" type="button" value="Choose a Province Query String by Index" />
+    <div id="msg_provinceByIndex" class="message"></div>
+    <!-- // Item -->
+    
+    <!-- Item -->
+    <div class="title">
+    	<h2>Non-Case Sensitive - Looking for "PROVINCE"</h2>
+        <a href="#7"><img src="images/ico_plus.png" alt="Show the Code" /></a>
+    </div>
+    
+<pre id="7" class="code"><code class="javascript">
+	// Gets "province" query string value from the address bar using a index and non-case sensitivity
+	$("#provinceNonCaseSensitivity").click(function(){
+								 	 
+		var message = $.QueryString("Province", {
+				index : 2,
+				isCaseSensitive : false
+			}),
+			message = ( !message )? "null":message; // Passing the value null to string;
+		
+		$("#msg_provinceNonCaseSensitivity").html( message ); 
+		
+	});
+    
+</code></pre>
+    
+    <input id="provinceNonCaseSensitivity" type="button" value="Non-Case Sensitive" />
+    <div id="msg_provinceNonCaseSensitivity" class="message"></div>
+    <!-- // Item -->
+    
+    <!-- Item -->
+    <div class="title">
+    	<h2>Informing an URL Different of the Address Bar</h2>
+        <a href="#8"><img src="images/ico_plus.png" alt="Show the Code" /></a>
+    </div>
+    
+<pre id="8" class="code"><code class="javascript">
+	// Gets "country" query string value from a different url
+	$("#informingURL").click(function(){
+								 	 
+		var message = $.QueryString("country", {
+				href : "http://www.darlesson.com/?country=Brazil"
+			}),
+			message = ( !message )? "null":message; // Passing the value null to string;
+		
+		$("#msg_informingURL").html( message ); 
+		
+	});
+    
+</code></pre>
+    
+    <input id="informingURL" type="button" value="Getting Query String From a Differen URL" />
+    <div id="msg_informingURL" class="message"></div>
+    <!-- // Item -->
+    
+</body>
+</html>

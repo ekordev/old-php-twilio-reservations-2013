@@ -1,0 +1,12 @@
+[14-Oct-2013 04:40:47 America/Vancouver] PHP Warning:  Module 'pdo_sqlsrv' already loaded in Unknown on line 0
+[14-Oct-2013 04:40:47 America/Vancouver] PHP Warning:  Module 'sqlsrv' already loaded in Unknown on line 0
+[14-Oct-2013 04:40:47 America/Vancouver] PHP Warning:  PHP Startup: pdo_sqlsrv: Unable to initialize module
+Module compiled with build ID=API20100525,TS,VC9
+PHP    compiled with build ID=API20100525,NTS,VC9
+These options need to match
+ in Unknown on line 0
+[14-Oct-2013 04:40:47 America/Vancouver] PHP Warning:  PHP Startup: sqlsrv: Unable to initialize module
+Module compiled with build ID=API20100525,TS,VC9
+PHP    compiled with build ID=API20100525,NTS,VC9
+These options need to match
+ in Unknown on line 0

@@ -1,0 +1,10 @@
+/* page.css */
+#login-title {
+	height: 100% !important;
+	width: 100% !important;
+	text-align: center;
+}
+.controls {
+	padding: 0.5em auto;
+	margin: 0.5em auto;
+}
